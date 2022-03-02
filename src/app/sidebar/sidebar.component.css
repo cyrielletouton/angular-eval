@@ -1,0 +1,176 @@
+/* Source: https://codepen.io/plavookac/pen/qomrMw */
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #FFFFFF;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    box-shadow: #0003 0 2px 4px -1px, #00000024 0 3px 4px, #0000001f 0 1px 7px;
+}
+.header .logo {
+  margin-left: 0;
+  transition: margin-left 250ms ease-in-out;
+}
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+.mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 180px;
+    transition: transform 250ms ease-in-out;
+    background: #FFFFFF;
+}
+@media screen and (max-width: 1023px) {
+  .header .logo {
+    margin-left: 60px;
+  }
+  #sidebarMenu {
+    transform: translateX(-190px);
+    z-index: 10;
+    box-shadow: #0003 0 2px 4px -1px, #00000024 0 4px 5px, #0000001f 0 1px 10px;
+  }
+  .sidebarMenuInner {
+    margin: 90px 0 0 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    z-index: 10;
+  }
+  #sidebarMenu {
+    border-right: 1px solid #ddd;
+    margin-top: 60px;
+  }
+  .sidebarMenuInner {
+    margin: 30px 0 0 0;
+  }
+  .sidebarIconToggle {
+    display: none;
+  }
+}
+.sidebarMenuInner{
+    max-height: calc(100% - 90px);
+    overflow-y: scroll;
+    padding:0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li{
+    list-style: none;
+    color: #fff;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.sidebarMenuInner li span{
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+.sidebarMenuInner li a{
+    color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #444;
+}
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}

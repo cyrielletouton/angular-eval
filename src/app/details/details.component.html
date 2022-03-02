@@ -1,0 +1,12 @@
+<main>
+    <div class="container">
+      <article class="details" *ngIf="movie">
+        <h3>{{ movie.title }}</h3>
+        <a routerLink="/">Retour à l&apos;accueil</a>
+        <div class="details-body">
+          <img [src]="movie.poster_path" [alt]="movie.title" />
+          <!-- <p>{{ movie.description }}</p> -->
+        </div>
+      </article>
+    </div>
+  </main>
