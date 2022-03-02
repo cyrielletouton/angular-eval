@@ -1,3 +1,16 @@
+/* Source: https://codepen.io/plavookac/pen/qomrMw */
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+html, body {
+    overflow-x: hidden;
+    height: 100%;
+}
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+
 @media screen and (max-width: 567px) {
     .container {
       margin: 6em .5em;
@@ -20,28 +33,6 @@
       margin: 6em 16%;
       max-width: 1060px;
     }
-  }
-  
-  .card {
-    box-sizing: border-box;
-    border-radius: 4px;
-    box-shadow: #0003 0 2px 4px -1px, #00000024 0 4px 5px, #0000001f 0 1px 10px;
-    border-radius: 4px;
-  }
-  
-  .card img,
-  .details-img {
-    max-width: 100%;
-    object-fit: contain;
-  }
-  .card img {
-    margin-left: -1em;
-  }
-  
-  .card a {
-    text-decoration: none;
-    text-align: center;
-    padding: 1em;
   }
   
   .genres {

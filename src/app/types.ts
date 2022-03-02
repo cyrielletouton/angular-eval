@@ -1,6 +1,8 @@
 export class Movie {
     id!: number;
     title!: string;
-    description!: string;
+    tagline!: string;
     poster_path!: string;
+    vote_average!: number;
+    runtime!: number;
   }

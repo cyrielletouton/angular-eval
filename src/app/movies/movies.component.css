@@ -1,5 +1,41 @@
-/* --- Main --- */
-main {
-    margin-top: 2em;
-    flex: 1 0 auto;
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
 }
+
+.card {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: #0003 0 2px 4px -1px, #00000024 0 4px 5px, #0000001f 0 1px 10px;
+    border-radius: 4px;
+  }
+  
+  .card img,
+  .details-img {
+    max-width: 100%;
+    object-fit: contain;
+  }
+  .card img {
+    margin-left: -1em;
+  }
+  
+  .card a {
+    text-decoration: none;
+    text-align: center;
+    padding: 1em;
+  }
+/* .mainInner{
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.mainInner div{
+    display:table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+} */

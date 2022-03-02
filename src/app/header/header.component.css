@@ -1,0 +1,16 @@
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #FFFFFF;
+    position: fixed;
+    height: 60px!important;
+    overflow: hidden;
+    box-shadow: #0003 0 2px 4px -1px, #00000024 0 3px 4px, #0000001f 0 1px 7px;
+}
+.header .logo {
+  margin-left: 0;
+  transition: margin-left 250ms ease-in-out;
+}

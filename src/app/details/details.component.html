@@ -1,11 +1,16 @@
 <main>
     <div class="container">
       <article class="details" *ngIf="movie">
-        <h3>{{ movie.title }}</h3>
+        <h2>{{ movie.title }}</h2>
         <a routerLink="/">Retour à l&apos;accueil</a>
         <div class="details-body">
           <img [src]="movie.poster_path" [alt]="movie.title" />
           <!-- <p>{{ movie.description }}</p> -->
+          <h3>{{ movie.tagline }}</h3>
+          <p class="meta-wrap">
+            <span class="rating">rating: {{ movie.vote_average }}</span>
+            <span class="meta">English / {{ movie.runtime }} min. / 2021</span>
+          </p>
         </div>
       </article>
     </div>
