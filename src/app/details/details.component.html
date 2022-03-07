@@ -1,11 +1,38 @@
-<main>
+<div id="center" class="main center">
+
+  <div class="container">
+    <div class="row" *ngIf="movie">
+      <div>
+        <img [src]="movie.poster_path" [alt]="movie.title" />  
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <h2>{{ movie.title }}</h2>
+        <h3>{{ movie.tagline }}</h3>
+        <p class="meta-wrap">
+          <span class="rating">Rating: {{ movie.vote_average }} - </span>
+          <span class="meta" > {{ movie.spoken_languages[0].name }} / {{ movie.runtime }} min. / {{ movie.release_date | date:'YYYY' }}</span>
+        </p>
+
+        <ul class="genres">
+          <li *ngFor="let genre of movie.genres"> 
+            <p>{{ genre.name }}</p>
+          </li>
+        </ul>
+        <a routerLink="/">Retour à l&apos;accueil</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- <main>
     <div class="container">
       <article class="details" *ngIf="movie">
         <h2>{{ movie.title }}</h2>
         <a routerLink="/">Retour à l&apos;accueil</a>
         <div class="details-body">
           <img [src]="movie.poster_path" [alt]="movie.title" />
-          <!-- <p>{{ movie.description }}</p> -->
+           <p>{{ movie.description }}</p>
           <h3>{{ movie.tagline }}</h3>
           <p class="meta-wrap">
             <span class="rating">rating: {{ movie.vote_average }}</span>
@@ -14,4 +41,4 @@
         </div>
       </article>
     </div>
-  </main>
+  </main> -->

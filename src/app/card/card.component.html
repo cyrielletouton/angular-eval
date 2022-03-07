@@ -1,8 +1,18 @@
-<img [src]="movie.poster_path" [alt]="movie.title" />
-<h3>{{ movie.title }}</h3>
-<p>{{ movie.tagline }}</p>
-<a [routerLink]="['/movies', movie.id]">En savoir plus</a>
-<p class="icons">
-<!-- <span class="likes">{{ post.likes }} <i class="far fa-heart" (click)="like()"></i></span> -->
-</p>
-<div *ngIf="error">{{ error }}</div>
+<div class="card">
+
+    <a [routerLink]="['/movies', movie.id]">
+        <img [src]="movie.poster_path" [alt]="movie.title" />
+        <p>{{ movie.title }}</p>
+
+    </a>
+
+    <!-- <h3>{{ movie.title }}</h3>
+    <p>{{ movie.tagline }}</p>
+    <a [routerLink]="['/movies', movie.id]">En savoir plus</a>
+    <p class="icons">
+    <span class="likes">{{ post.likes }} <i class="far fa-heart" (click)="like()"></i></span>
+    </p> -->
+
+    <div *ngIf="error">{{ error }}</div>
+
+</div>
