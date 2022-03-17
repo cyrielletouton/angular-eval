@@ -3,9 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MoviesComponent } from './movies/movies.component';
 import { DetailsComponent } from './details/details.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: '', component: MoviesComponent },
+  {
+    path: '',
+    component: MoviesComponent,
+    children: [
+      {path: ':genre', component: SidebarComponent}
+    ]
+  },
   { path: 'movies/:id', component: DetailsComponent }
 ];
 

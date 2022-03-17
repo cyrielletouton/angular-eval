@@ -4,7 +4,7 @@
 
         <div class="row" *ngFor="let movie of movies">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies">
-                    <app-card [movie]="movie"></app-card>
+                    <app-card [movie]="movie" (genreUpdatedEvent)="getByGenre($event)"></app-card>
             </div>
         </div>
 

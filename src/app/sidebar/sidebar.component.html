@@ -6,12 +6,8 @@
 </label>
 <div id="sidebarMenu">
   <ul class="sidebarMenuInner">
-    <li><a href="#" target="_blank">Action</a></li>
-    <li><a href="#" target="_blank">Adventure</a></li>
-    <li><a href="#" target="_blank">Animation</a></li>
-    <li><a href="#" target="_blank">Comedy</a></li>
-    <li><a href="#" target="_blank">Crime</a></li>
-    <li><a href="#" target="_blank">Documentary</a></li>
-    <li><a href="#" target="_blank">Drama</a></li>
+    <li *ngFor="let genre of genres"> 
+      <a [routerLink]="['/movies']" [queryParams]="{ genre: genre.name }" >{{ genre.name }}</a>
+    </li>
   </ul>
 </div>

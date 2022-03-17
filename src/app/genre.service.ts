@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
-import { Genre, Movie } from './types';
+import { Genre } from './types';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class MovieService {
+export class GenreService {
   // URL absolue
   serverUrl = 'https://movie-api.benoithubert.me';
   // chemin relatif sur le serveur
-  moviesPath = '/movies';
+  genresPath = '/genres';
 
   constructor(
     private http: HttpClient,
@@ -41,30 +41,10 @@ export class MovieService {
     return throwError(errorMessage);
   }
 
-  getAllMovies(): Observable<Movie[]> {
+  getAllGenres(): Observable<Genre[]> {
     return this.http
-      .get<Movie[]>(
-        `${this.serverUrl}${this.moviesPath}`
-      );
-  }
-
-  getMovie(movieId: number): Observable<Movie> {
-    return this.http
-      .get<Movie>(
-        `${this.serverUrl}${this.moviesPath}/${movieId}`
-      )
-      .pipe(
-        catchError(error => this.handleError(error))
-      );
-  }
-
-  getGenre(genreName: string): Observable<Movie> {
-    return this.http
-      .get<Movie>(
-        `${this.serverUrl}${this.moviesPath}?genre=${genreName}`
-      )
-      .pipe(
-        catchError(error => this.handleError(error))
+      .get<Genre[]>(
+        `${this.serverUrl}${this.genresPath}`
       );
   }
 }
