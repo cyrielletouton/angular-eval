@@ -11,6 +11,7 @@ import { CardComponent } from './card/card.component';
 import { DetailsComponent } from './details/details.component';
 
 import { HttpErrorInterceptor } from './http-error.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },

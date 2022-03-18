@@ -7,7 +7,7 @@
 <div id="sidebarMenu">
   <ul class="sidebarMenuInner">
     <li *ngFor="let genre of genres"> 
-      <a [routerLink]="['/movies']" [queryParams]="{ genre: genre.name }" >{{ genre.name }}</a>
+      <a (click)="updateGenre(genre.name)" [routerLink]="['/movies']" >{{ genre.name }}</a>
     </li>
   </ul>
 </div>

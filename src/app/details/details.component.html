@@ -18,6 +18,21 @@
             <p>{{ genre.name }}</p>
           </li>
         </ul>
+
+      <form [formGroup]="formComment" (ngSubmit)="addComment()">
+        <label for="comments">Comments :</label><br>
+        <textarea formControlName="text" id="comments" name="comments" cols="40" rows="5"></textarea><br><br>
+        <label for="rating">Rating :</label><br>
+        <input type="number" formControlName="rating" min=1 max=10/><br><br>
+        <button type="submit">Add</button>
+      </form>
+
+      <ul class="comments">
+        <li *ngFor="let comment of movie.comments"> 
+          <p>{{ comment.text }}</p>
+        </li>
+      </ul>
+
         <a routerLink="/">Retour à l&apos;accueil</a>
       </div>
     </div>

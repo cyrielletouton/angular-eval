@@ -16,6 +16,8 @@ export class CardComponent implements OnInit {
   @Input() genre!: Genre;
   @Output() genreUpdatedEvent = new EventEmitter<Movie>();
 
+  @Output() movieUpdatedEvent = new EventEmitter<Movie>();
+
   error = '';
 
   constructor(private movieService: MovieService) { }

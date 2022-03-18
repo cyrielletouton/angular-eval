@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
-import { Genre, Movie } from './types';
+import { Movie } from './types';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -58,9 +58,20 @@ export class MovieService {
       );
   }
 
-  getGenre(genreName: string): Observable<Movie> {
+  addCommentMovie(movieId: number, data: Partial<Comment>): Observable<Comment> {
     return this.http
-      .get<Movie>(
+      .post<Comment>(
+        `${this.serverUrl}${this.moviesPath}/${movieId}/comments`,
+        data
+      )
+      .pipe(
+        catchError(error => this.handleError(error))
+      );
+  }
+
+  getGenre(genreName: string): Observable<Movie[]> {
+    return this.http
+      .get<Movie[]>(
         `${this.serverUrl}${this.moviesPath}?genre=${genreName}`
       )
       .pipe(

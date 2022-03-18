@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: MoviesComponent,
     children: [
-      {path: ':genre', component: SidebarComponent}
+      {path: ':genre', component: MoviesComponent}
     ]
   },
   { path: 'movies/:id', component: DetailsComponent }
